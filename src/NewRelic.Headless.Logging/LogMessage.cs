@@ -10,9 +10,18 @@ public sealed class LogMessage
     [JsonConverter(typeof(StringEnumConverter))]
     public LogLevel Level { get; set; }
 
-    [JsonProperty("service.name")]
-    public string? ServiceName { get; set; }
+    [JsonProperty("entity")]
+    public Entity? Entity { get; set; }
 
     [JsonProperty("message")]
     public string? Message { get; set; }
+}
+
+public sealed class  Entity
+{
+    [JsonProperty("guid")]
+    public string? Id { get; set; }
+
+    [JsonProperty("name")]
+    public string? Name { get; set; }
 }

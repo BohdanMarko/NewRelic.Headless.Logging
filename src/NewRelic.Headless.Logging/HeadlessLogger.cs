@@ -56,7 +56,11 @@ public sealed class HeadlessLogger : IHeadlessLogger
     LogMessage BuildLogMessage(LogLevel level, string message) => new()
     {
         Level = level,
-        ServiceName = _options.ServiceName,
-        Message = message
+        Message = message,
+        Entity = new()
+        {
+            Id = _options.EntityGuid,
+            Name = _options.EntityName
+        }
     };
 }

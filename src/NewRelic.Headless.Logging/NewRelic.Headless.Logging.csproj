@@ -5,12 +5,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <PackageId>Marko.NewRelic.Headless.Logging</PackageId>
-    <Title>NewRelic Headless API logger</Title>
+    <Title>Marko.NewRelic.Headless.Logging</Title>
+    <Description>Simple logger for NewRelic Headless API</Description>
     <Version>0.0.3</Version>
     <Authors>Bohdan Marko</Authors>
     <Company>Bohdan Marko</Company>
     <Product>Marko.NewRelic.Headless.Logging</Product>
-    <PackageTags>NewRelic, Logging, Logger, Logs</PackageTags>
+    <PackageTags>NewRelic, Logging, Logger, Logs, Headless</PackageTags>
     <RepositoryUrl>https://github.com/BohdanMarko/NewRelic.Headless.Logging</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
