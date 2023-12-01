@@ -11,10 +11,24 @@ public sealed class HeadlessLogger : IHeadlessLogger
     private readonly HttpClient _client;
     private readonly HeadlessLoggerOptions _options;
 
+    private static AsyncLocal<Stack<(string name, object value)>> Scopes = new AsyncLocal<Stack<(string, object)>>();
+
     public HeadlessLogger(HttpClient client, IOptions<HeadlessLoggerOptions> options)
     {
         _client = client;
         _options = options.Value;
+    }
+
+    public IDisposable BeginScope(string name, object value)
+    {
+        Scopes.Value ??= new Stack<(string, object)>();
+        Scopes.Value.Push((name, value));
+        return new DisposableScope();
+    }
+
+    private class DisposableScope : IDisposable
+    {
+        public void Dispose() => Scopes.Value?.Pop();
     }
 
     public void LogDebug(string message) => Log(LogLevel.Debug, message);
@@ -31,7 +45,6 @@ public sealed class HeadlessLogger : IHeadlessLogger
 
     public void LogCritical(string message) => Log(LogLevel.Critical, message);
     public async Task LogCriticalAsync(string message) => await LogAsync(LogLevel.Critical, message);
-
 
     public void Log(LogLevel level, string message)
     {
@@ -61,6 +74,7 @@ public sealed class HeadlessLogger : IHeadlessLogger
         {
             Id = _options.EntityGuid,
             Name = _options.EntityName
-        }
+        },
+        Parameters = Scopes.Value?.ToDictionary(x => x.name, x => x.value)
     };
 }

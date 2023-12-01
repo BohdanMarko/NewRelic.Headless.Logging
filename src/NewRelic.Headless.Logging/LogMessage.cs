@@ -15,6 +15,9 @@ public sealed class LogMessage
 
     [JsonProperty("message")]
     public string? Message { get; set; }
+
+    [JsonProperty("message.parameters")]
+    public IDictionary<string, object>? Parameters { get; set; }
 }
 
 public sealed class  Entity

@@ -12,7 +12,7 @@ public static class ServiceCollectionExtensions
         services.AddHttpClient<IHeadlessLogger, HeadlessLogger>((serviceProvider, client) =>
         {
             HeadlessLoggerOptions optionsConfig = serviceProvider.GetRequiredService<IOptions<HeadlessLoggerOptions>>().Value;
-            client.BaseAddress = new Uri(ResolveBaseAddress(optionsConfig.Region));
+            client.BaseAddress = new Uri(optionsConfig.BaseUrl ?? ResolveBaseAddress(optionsConfig.Region));
             client.DefaultRequestHeaders.Clear();
             client.DefaultRequestHeaders.Add("Api-Key", optionsConfig.ApiKey);
         });

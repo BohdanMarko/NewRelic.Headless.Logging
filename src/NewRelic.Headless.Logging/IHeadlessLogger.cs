@@ -4,6 +4,7 @@ namespace NewRelic.Headless.Logging;
 
 public interface IHeadlessLogger
 {
+    IDisposable BeginScope(string name, object value);
     void Log(LogLevel level, string message);
     Task LogAsync(LogLevel level, string message);
     void LogCritical(string message);

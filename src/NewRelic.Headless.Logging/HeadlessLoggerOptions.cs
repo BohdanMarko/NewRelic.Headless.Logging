@@ -2,9 +2,10 @@
 
 public sealed class HeadlessLoggerOptions
 {
-    public string ApiKey { get; set; } = string.Empty;
-    public string EntityGuid { get; set; } = string.Empty;
-    public string EntityName { get; set; } = string.Empty;
+    public string? ApiKey { get; set; }
+    public string? EntityGuid { get; set; }
+    public string? EntityName { get; set; }
+    public string? BaseUrl { get; set; }
     public NewRelicRegion Region { get; set; }
 }
 

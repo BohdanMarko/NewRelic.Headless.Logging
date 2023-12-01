@@ -7,7 +7,7 @@
     <PackageId>Marko.NewRelic.Headless.Logging</PackageId>
     <Title>Marko.NewRelic.Headless.Logging</Title>
     <Description>Simple logger for NewRelic Headless API</Description>
-    <Version>0.0.3</Version>
+    <Version>0.0.4</Version>
     <Authors>Bohdan Marko</Authors>
     <Company>Bohdan Marko</Company>
     <Product>Marko.NewRelic.Headless.Logging</Product>
