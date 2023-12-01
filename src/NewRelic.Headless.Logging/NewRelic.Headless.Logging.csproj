@@ -6,8 +6,8 @@
     <Nullable>enable</Nullable>
     <PackageId>Marko.NewRelic.Headless.Logging</PackageId>
     <Title>Marko.NewRelic.Headless.Logging</Title>
-    <Description>Simple logger for NewRelic Headless API</Description>
-    <Version>0.0.4</Version>
+    <Description>Simple logger implementation based on NewRelic Headless API</Description>
+    <Version>0.0.5</Version>
     <Authors>Bohdan Marko</Authors>
     <Company>Bohdan Marko</Company>
     <Product>Marko.NewRelic.Headless.Logging</Product>
@@ -15,6 +15,7 @@
     <RepositoryUrl>https://github.com/BohdanMarko/NewRelic.Headless.Logging</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageOutputPath>$(OutputPath)packages\</PackageOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
