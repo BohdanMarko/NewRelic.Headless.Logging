@@ -60,6 +60,4 @@ public sealed class NewRelicLogger : ILogger
     {
         public void Dispose() => Scopes.Value?.Pop();
     }
-
-    sealed record ScopeEntry(string Name, object Value);
 }

@@ -1,6 +1,4 @@
-﻿using Microsoft.Extensions.Logging;
-
-namespace NewRelic.Headless.Logging.Client;
+﻿namespace NewRelic.Headless.Logging.Client;
 
 public interface INewRelicClient
 {

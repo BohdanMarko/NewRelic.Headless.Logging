@@ -7,7 +7,6 @@ using System.Runtime.Versioning;
 
 namespace NewRelic.Headless.Logging.Providers;
 
-
 [UnsupportedOSPlatform("browser")]
 [ProviderAlias("NewRelicLogger")]
 public sealed class NewRelicLoggerProvider : ILoggerProvider
