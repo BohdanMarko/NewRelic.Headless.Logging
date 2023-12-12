@@ -1,10 +1,8 @@
-﻿namespace NewRelic.Headless.Logging;
+﻿namespace NewRelic.Headless.Logging.Client;
 
-public sealed class HeadlessLoggerOptions
+public sealed class NewRelicClientOptions
 {
     public string? ApiKey { get; set; }
-    public string? EntityGuid { get; set; }
-    public string? EntityName { get; set; }
     public string? BaseUrl { get; set; }
     public NewRelicRegion Region { get; set; }
 }
